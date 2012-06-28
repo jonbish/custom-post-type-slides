@@ -8,9 +8,6 @@ custom taxonomy.
 Usage
 -------
 
-The following markups are supported.  The dependencies listed are required if
-you wish to run the library.
-
 1. Install and activate the plugin
 2. Move the `taxonomy-cptslides_presentation.php` file to your theme directory
 3. Navigate to your permalinks page to flush your rewrite rules
