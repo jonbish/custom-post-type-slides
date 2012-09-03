@@ -2,7 +2,7 @@
 
 /*
   Plugin Name: CPT Slides
-  Plugin URI: http://www.bostonwp.com
+  Plugin URI: http://www.bostonwp.org
   Description: Adds actionable social slidemarking buttons to your site
   Version: 1
   Author: Jon Bishop
@@ -14,9 +14,11 @@
  * * Create the custom post type
  */
 
-if (!defined('SPTSLIDES_URL')) {
-    define('SPTSLIDES_URL', plugin_dir_url(__FILE__));
-}
+if (!defined('SPTSLIDES_URL'))
+    define('CPTSLIDES_URL', plugin_dir_url(__FILE__));
+
+if (!defined('CPTSLIDES_PATH'))
+    define('CPTSLIDES_PATH', plugin_dir_path(__FILE__));
 
 function cptslides_init() {
     $labels = array(
@@ -222,7 +224,7 @@ add_filter("manage_edit-cptslides_columns", "cptslides_edit_columns");
 function cptslides_redirect() {
     global $post;
     // Instead of accessing slides directly, redirect to archive and focus on requested slide
-    if ('cptslides' == get_post_type() && !is_tax()) {
+    if (get_post_type() == 'cptslides' && !is_tax()) {
         // Find the slide's presenation link
         $terms = get_the_terms($post->ID, 'cptslides_presentation');
         foreach ($terms as $term) {
@@ -253,5 +255,20 @@ function cptslides_redirect() {
         die();
     }
 }
+
 add_action('template_redirect', 'cptslides_redirect');
+
+/*
+ * * Use a custom template
+ */
+
+function cptslides_template($template) {
+    global $post;
+    if ($post->post_type == 'cptslides') {
+        return CPTSLIDES_PATH . 'template.php';
+    }
+    return $template;
+}
+
+add_filter('template_include', 'cptslides_template', 1, 1);
 ?>
