@@ -121,7 +121,7 @@ function cptslides_help_text($contextual_help, $screen_id, $screen) {
                 '<ul>' .
                 '<li>' . __('It is better if you prefix your name with a short "namespace" that identifies your plugin, theme or website that implements the custom post type.') . '</li>' .
                 '<li>' . __('Custom post types have little to do with blog posts and are better classified as custom content types.') . '</li>' .
-                '<li>' . __('Remember you can cange the labels and messaging on your custom post as well as the contextual help (this).') . '</li>';
+                '<li>' . __('Remember you can change the labels and messaging on your custom post as well as the contextual help (this).') . '</li>';
     } elseif ('edit-cptslides' == $screen->id) {
         $contextual_help =
                 '<p>' . __('These slides are all part of individual presentations grouped by taxonomies.') . '</p>';
@@ -142,12 +142,10 @@ function cptslides_edit_columns($columns) {
     $columns = array(
         "cb" => "<input type=\"checkbox\" />",
         "title" => "Title",
-        //"featgrid" => "Appear in Grid",
         "presentation" => "Presentation",
         "order" => "Order",
         "author" => "Author",
-        "date" => "Date",
-            //"featured" => "Featured",
+        "date" => "Date"
     );
 
     return $columns;

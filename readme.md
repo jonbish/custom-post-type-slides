@@ -9,9 +9,7 @@ Usage
 -------
 
 1. Install and activate the plugin
-2. Move the `taxonomy-cptslides_presentation.php` file to your theme directory
-3. Navigate to your permalinks page to flush your rewrite rules
-4. Start making presentations
+2. Start making presentations
 
 
 Contributing
