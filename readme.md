@@ -5,6 +5,8 @@ This code was used to present custom post types at the [Boston WordPress meetup]
 Each slide is a new post with all posts in a presentation tied together using a 
 custom taxonomy.
 
+[View Presentation Here](http://www.jonbishop.com/presentation/custom-post-types/)
+
 Usage
 -------
 
